@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("offers.json")
     .then(res => res.json())
     .then(data => {
-      const mainMenu = document.getElementById("main-menu");
       const content = document.getElementById("content");
 
       const titleMap = {
@@ -15,33 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
         bank_jobs: "💼 Работа в банках"
       };
 
-      // Создаем главное меню
       Object.keys(data).forEach(key => {
-        const btn = document.createElement("button");
-        btn.textContent = titleMap[key] || key;
-        btn.onclick = () => showCategory(data[key], titleMap[key]);
-        mainMenu.appendChild(btn);
-      });
+        const section = document.createElement("section");
+        section.classList.add("category-section");
 
-      function showCategory(items, title) {
-        content.innerHTML = `<h2>${title}</h2>`;
-        items.forEach(item => {
-          const link = document.createElement("a");
-          link.href = item.link;
-          link.target = "_blank";
-          link.className = "button-link";
-          link.textContent = item.title;
-          content.appendChild(link);
+        const title = document.createElement("h2");
+        title.textContent = titleMap[key];
+        section.appendChild(title);
+
+        data[key].forEach(item => {
+          const card = document.createElement("a");
+          card.href = item.link;
+          card.target = "_blank";
+          card.className = "card button-link";
+          card.textContent = item.title;
+          section.appendChild(card);
         });
 
-        const backBtn = document.createElement("button");
-        backBtn.textContent = "⬅ Назад";
-        backBtn.className = "back-btn";
-        backBtn.onclick = () => {
-          content.innerHTML = "";
-        };
-        content.appendChild(backBtn);
-      }
+        content.appendChild(section);
+      });
     })
     .catch(err => {
       console.error("Ошибка загрузки offers.json:", err);
