@@ -37,4 +37,33 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => {
       console.error("Ошибка загрузки offers.json:", err);
     });
+
+  // Темная тема
+  const themeToggle = document.getElementById('theme-toggle');
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Баннер
+  const banner = document.getElementById('banner');
+  const closeBanner = document.getElementById('close-banner');
+
+  closeBanner.addEventListener('click', () => {
+    banner.style.display = 'none';
+    localStorage.setItem('bannerClosed', 'true');
+  });
+
+  window.addEventListener('load', () => {
+    if (localStorage.getItem('bannerClosed') === 'true') {
+      banner.style.display = 'none';
+    }
+  });
 });
