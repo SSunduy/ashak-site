@@ -4,24 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ашак Сайт</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos @2.3.4/dist/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Banner -->
-  <div id="banner" class="banner">
+  <div id="banner" class="banner" data-aos="fade-down">
     Подпишитесь на наш канал: <a href="https://t.me/ ВАШ_КАНАЛ" target="_blank">@ВАШ_КАНАЛ</a>
     <span id="close-banner" class="close-banner">×</span>
   </div>
 
   <!-- Основной контент -->
   <div id="app">
-    <h1>Ашак Сайт</h1>
-    <button id="theme-toggle">🌙 Переключить тему</button>
+    <h1 data-aos="fade-up">Ашак Сайт</h1>
+    <button id="theme-toggle" data-aos="zoom-in">🌙 Переключить тему</button>
     <div id="content"></div>
-    <a href="https://t.me/ ваш_бот" target="_blank" class="bot-link">💬 Написать в бота</a>
+    <a href="https://t.me/ ваш_бот" target="_blank" class="bot-link" data-aos="fade-up">💬 Написать в бота</a>
   </div>
 
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos @2.3.4/dist/aos.js"></script>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
