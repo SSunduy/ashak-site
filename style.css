@@ -26,6 +26,20 @@ button {
   color: white;
   cursor: pointer;
 }
+.banner {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.close-banner {
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 a.button-link {
   display: block;
