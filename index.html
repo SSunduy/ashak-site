@@ -5,34 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ашак Сайт</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts - стиль как у Apple -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- AOS Animation CSS -->
+  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos @2.3.4/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Banner -->
-  <div id="banner" class="banner" data-aos="fade-down">
-    Подпишитесь на наш канал: <a href="https://t.me/ ВАШ_КАНАЛ" target="_blank">@ВАШ_КАНАЛ</a>
-    <span id="close-banner" class="close-banner">×</span>
+  <!-- Background Map -->
+  <div class="map-background" data-aos="fade-in">
+    <!-- Вставим SVG карту здесь -->
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="tyva-map">
+      <!-- Контур Республики Тыва -->
+      <path d="M100,500 L200,450 L300,470 L400,400 L500,420 L600,350 L650,300 L700,250 L680,200 L600,180 L500,150 L400,160 L300,140 L200,150 L150,200 Z"
+            fill="#e0e0e0" stroke="#ccc" stroke-width="1" />
+
+      <!-- Города -->
+      <circle cx="300" cy="470" r="4" fill="#009688" />
+      <text x="310" y="475" font-size="12" fill="#333">Кызыл</text>
+
+      <circle cx="400" cy="400" r="3" fill="#009688" />
+      <text x="410" y="405" font-size="12" fill="#333">Ак-Довурак</text>
+
+      <circle cx="500" cy="420" r="2" fill="#009688" />
+      <text x="510" y="425" font-size="12" fill="#333">Шагонар</text>
+    </svg>
   </div>
 
-  <!-- Основной контент -->
-  <div id="app">
-    <h1 data-aos="fade-up">Ашак Сайт</h1>
-    <button id="theme-toggle" data-aos="zoom-in">🌙 Переключить тему</button>
+  <!-- Content -->
+  <div id="app" data-aos="fade-up">
+    <h1>Ашак Сайт</h1>
+    <button id="theme-toggle">🌙 Тема</button>
     <div id="content"></div>
-    <a href="https://t.me/ ваш_бот" target="_blank" class="bot-link" data-aos="fade-up">💬 Написать в бота</a>
+    <a href="https://t.me/ ваш_бот" target="_blank" class="bot-link">💬 Написать в бота</a>
   </div>
 
-  <!-- AOS Script -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos @2.3.4/dist/aos.js"></script>
-
-  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
